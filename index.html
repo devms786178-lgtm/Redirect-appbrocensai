@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS</title>
+<style>
+  :root{
+    --bg1:#0b0d17;
+    --bg2:#161a2b;
+    --accent:#4f7cff;
+    --accent2:#8b5cf6;
+    --text:#eef0fa;
+    --muted:#8b90ab;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(79,124,255,0.18), transparent 45%),
+      radial-gradient(circle at 80% 85%, rgba(139,92,246,0.18), transparent 45%),
+      linear-gradient(160deg, var(--bg1), var(--bg2));
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    overflow:hidden;
+  }
+  .card{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:22px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    padding:40px 30px 34px;
+    text-align:center;
+    animation:fadeUp .6s ease;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .icon{
+    width:56px; height:56px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow:0 0 0 6px rgba(79,124,255,0.12);
+  }
+  .icon svg{width:26px; height:26px; fill:#fff;}
+  h1{
+    font-size:1.32rem;
+    font-weight:600;
+    letter-spacing:.2px;
+    line-height:1.35;
+    margin-bottom:10px;
+  }
+  .sub{
+    color:var(--muted);
+    font-size:.88rem;
+    margin-bottom:30px;
+  }
+  .btn{
+    position:relative;
+    display:inline-block;
+    width:100%;
+    padding:15px 20px;
+    border:none;
+    border-radius:14px;
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:.3px;
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(79,124,255,0.35);
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn::before{
+    content:"";
+    position:absolute;
+    top:0; left:-150%;
+    width:60%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-25deg);
+    animation:shine 2.6s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%{left:-150%;}
+    50%{left:150%;}
+    100%{left:150%;}
+  }
+  .hint{
+    margin-top:16px;
+    font-size:.76rem;
+    color:var(--muted);
+  }
+  .brand{
+    margin-top:28px;
+    font-size:.7rem;
+    letter-spacing:2px;
+    color:rgba(255,255,255,0.25);
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7v-4H4v-6h9V5z"/></svg>
+    </div>
+
+    <h1>Continue to your Destination?</h1>
+
+    <a class="btn" id="continueBtn" href="ac24://open3677124-jauk1r/Py1Class" rel="noopener">Continue</a>
+
+    <p class="hint">Tap on continue button to continue your destination.</p>
+  </div>
+
+</body>
+</html>
